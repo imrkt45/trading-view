@@ -1,13 +1,11 @@
-import dynamic from 'next/dynamic';
-import { Container, CssBaseline } from '@mui/material';
+import { Box } from '@mui/material';
+import SignInPage from  "../../Pages/signInPage"
 
-const SignInForm = dynamic(() => import('../../component/SignInForm'));
 
 export default function SignIn() {
   return (
-    <Container component="main" maxWidth="xs" sx={{ bgcolor: '#b2b2d4', borderRadius: '3%' }}>
-      <CssBaseline />
-      <SignInForm />
-    </Container>
+    <Box>
+      <SignInPage />
+    </Box>
   );
 }

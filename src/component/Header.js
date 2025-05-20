@@ -28,8 +28,7 @@ const CustomHeader = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const pathname = usePathname(); // 👈 Current route
-
+  const pathname = usePathname(); 
   return (
     <AppBar
       position="static"

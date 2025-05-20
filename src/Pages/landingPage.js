@@ -7,6 +7,7 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
+import { useRouter } from 'next/navigation';
 import Testimonalsection from "../component/TestimonialsSection"
 
 const features = [
@@ -49,6 +50,7 @@ const steps = [
 ];
 
 const LandingPage = () => {
+   const router = useRouter();
   return (
     <Box mt={{ xs: 4, md: 6 }}>
 
@@ -83,6 +85,7 @@ const LandingPage = () => {
             mt: 2,
             "&:hover": { bgcolor: "#32903f" },
           }}
+           onClick={() => router.push('/signin')}
         >
           Get Started Now
         </Button>
@@ -194,6 +197,7 @@ const LandingPage = () => {
             mt: 2,
             "&:hover": { bgcolor: "#32903f" },
           }}
+           onClick={() => router.push('/signup')}
         >
           Create New Account
         </Button>
