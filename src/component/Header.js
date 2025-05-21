@@ -21,6 +21,7 @@ const navItems = [
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
   { label: "Sign In", href: "/signin" },
+  { label: "Profile", href: "/profile" }
 ];
 
 const CustomHeader = () => {

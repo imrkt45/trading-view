@@ -8,6 +8,7 @@ import {
   Paper,
   useMediaQuery,
   useTheme,
+  Link,
 } from '@mui/material';
 import { useForm } from 'react-hook-form';
 
@@ -45,25 +46,33 @@ export default function ForgotPasswordPage() {
 
   return (
     <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-     
+      sx={{
+        minHeight: { xs: 'auto', md: '100vh' },
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        px: 2,
+        py: { xs: 5, sm: 8 },
+        backgroundColor: '#f9f9f9',
+      }}
     >
       <Paper
-        elevation={3}
+        elevation={4}
         sx={{
-          p: { xs: 3, sm: 4 },
-          maxWidth: 420,
+          p: { xs: 3, sm: 5 },
           width: '100%',
-          borderRadius: 3,
+          maxWidth: 440,
+          borderRadius: 4,
+          boxShadow: '0 6px 20px rgba(0,0,0,0.08)',
         }}
       >
         <Typography
-          variant={isSmall ? 'h6' : 'h5'}
+          variant="h5"
           fontWeight="bold"
-          gutterBottom
           textAlign="center"
+          mb={1}
+          color="#2e7d32"
+          sx={{ fontSize: { xs: '1.5rem', sm: '1.7rem' } }}
         >
           Forgot Password
         </Typography>
@@ -71,16 +80,16 @@ export default function ForgotPasswordPage() {
         <Typography
           variant="body2"
           textAlign="center"
-          mb={2}
+          mb={3}
           color="text.secondary"
         >
-          Enter your email and we'll send you a link to reset your password.
+          Enter your email and we’ll send you a link to reset your password.
         </Typography>
 
         <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)}>
           <TextField
             fullWidth
-            label="Email"
+            label="Email Address"
             type="email"
             margin="normal"
             {...register('email', {
@@ -104,9 +113,10 @@ export default function ForgotPasswordPage() {
               py: 1.2,
               fontWeight: 'bold',
               textTransform: 'none',
+              fontSize: '1rem',
               backgroundColor: '#3aa44a',
               '&:hover': {
-                backgroundColor: '#358d3e',
+                backgroundColor: '#2e7d32',
               },
             }}
           >
@@ -120,7 +130,10 @@ export default function ForgotPasswordPage() {
           mt={3}
           color="text.secondary"
         >
-          Remember your password? <a href="/signin">Sign In</a>
+          Remember your password?{' '}
+          <Link href="/signin" underline="hover" color="#3aa44a" fontWeight="bold">
+            Sign In
+          </Link>
         </Typography>
       </Paper>
     </Box>

@@ -11,6 +11,7 @@ import {
   Paper,
   useMediaQuery,
   useTheme,
+  Link,
 } from '@mui/material';
 import { Visibility, VisibilityOff, Google } from '@mui/icons-material';
 import { useForm } from 'react-hook-form';
@@ -55,33 +56,49 @@ export default function SignUpPage() {
 
   return (
     <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-   
+      sx={{
+        minHeight: { xs: 'auto', md: '100vh' },
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        px: 2,
+        py: { xs: 4, sm: 6 },
+        background: '#f9f9f9',
+      }}
     >
       <Paper
-        elevation={3}
+        elevation={4}
         sx={{
-          p: { xs: 3, sm: 4 },
-          maxWidth: 420,
+          p: { xs: 3, sm: 5 },
           width: '100%',
-          borderRadius: 3,
+          maxWidth: 440,
+          borderRadius: 4,
+          boxShadow: '0 6px 20px rgba(0,0,0,0.08)',
         }}
       >
         <Typography
-          variant={isSmall ? 'h6' : 'h5'}
+          variant="h5"
           fontWeight="bold"
-          gutterBottom
           textAlign="center"
+          mb={1}
+          color="#2e7d32"
+          sx={{ fontSize: { xs: '1.5rem', sm: '1.7rem' } }}
         >
-          Sign Up
+          Create Your Account
+        </Typography>
+        <Typography
+          variant="body2"
+          textAlign="center"
+          color="text.secondary"
+          mb={3}
+        >
+          Join us and start your journey!
         </Typography>
 
         <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)}>
           <TextField
             fullWidth
-            label="Name"
+            label="Full Name"
             margin="normal"
             {...register('name', { required: 'Name is required' })}
             error={!!errors.name}
@@ -91,7 +108,7 @@ export default function SignUpPage() {
 
           <TextField
             fullWidth
-            label="Email"
+            label="Email Address"
             type="email"
             margin="normal"
             {...register('email', {
@@ -144,9 +161,10 @@ export default function SignUpPage() {
               py: 1.2,
               fontWeight: 'bold',
               textTransform: 'none',
+              fontSize: '1rem',
               backgroundColor: '#3aa44a',
               '&:hover': {
-                backgroundColor: '#358d3e',
+                backgroundColor: '#2e7d32',
               },
             }}
           >
@@ -160,7 +178,7 @@ export default function SignUpPage() {
           my={2}
           color="text.secondary"
         >
-          OR
+          — OR —
         </Typography>
 
         <Button
@@ -172,6 +190,7 @@ export default function SignUpPage() {
             py: 1.2,
             textTransform: 'none',
             fontWeight: 'bold',
+            fontSize: '0.95rem',
             borderColor: '#ccc',
             '&:hover': {
               borderColor: '#3aa44a',
@@ -179,7 +198,7 @@ export default function SignUpPage() {
             },
           }}
         >
-          Sign Up with Google
+          Continue with Google
         </Button>
 
         <Typography
@@ -188,7 +207,10 @@ export default function SignUpPage() {
           mt={3}
           color="text.secondary"
         >
-          Already have an account? <a href="/signin">Sign In</a>
+          Already have an account?{' '}
+          <Link href="/signin" underline="hover" color="#3aa44a" fontWeight="bold">
+            Sign In
+          </Link>
         </Typography>
       </Paper>
     </Box>
