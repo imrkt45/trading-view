@@ -204,7 +204,7 @@ export default function ProfilePage() {
         </form>
       </Paper>
 
-      {/* Change Password Dialog */}
+   
       <Dialog
         open={open}
         onClose={() => setOpen(false)}
