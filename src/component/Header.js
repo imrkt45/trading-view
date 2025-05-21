@@ -17,7 +17,6 @@ import { useTheme } from "@mui/material/styles";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "Home", href: "/" },
   { label: "Tools", href: "/tools" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },

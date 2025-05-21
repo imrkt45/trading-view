@@ -85,7 +85,7 @@ const CustomToolsPage = () => {
                                     }}
                                     onClick={() => {
                                         if (feature.title === "TradingView Chart") {
-                                            router.push("/Boxgraph");
+                                            router.push("/tradingViewChart");
                                         } else {
                                             console.log(`${feature.title} tool clicked`);
                                         }
