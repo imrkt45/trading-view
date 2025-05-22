@@ -34,7 +34,7 @@ export default function ProfilePage() {
     defaultValues: {
       fullName: 'John Doe',
       email: 'johndoe@example.com',
-      phone: '+1 123 466 7890',
+      phone: '+191231312312',
     },
   });
 

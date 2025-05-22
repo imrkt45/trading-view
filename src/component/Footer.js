@@ -5,6 +5,23 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 
+const quickLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Tools', href: '/tools' },
+  { label: 'About', href: '/about' },
+];
+
+const legalLinks = [
+  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Terms of Service', href: '/terms' },
+];
+
+const socialLinks = [
+  { icon: <TwitterIcon />, href: 'https://twitter.com' },
+  { icon: <LinkedInIcon />, href: 'https://linkedin.com' },
+  { icon: <GitHubIcon />, href: 'https://github.com' },
+];
+
 export default function Footer() {
   return (
     <Box sx={{ bgcolor: '#0a1124', color: '#fff', px: { xs: 4, sm: 10 }, pt: 6, pb: 3, mt: 3 }}>
@@ -22,48 +39,57 @@ export default function Footer() {
           </Typography>
         </Grid>
 
-
         <Grid item xs={6} sm={4} md={2}>
           <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
             Quick Links
           </Typography>
-          <Box display="flex" flexDirection="column" >
-            <Link variant="body2" href="/" sx={{ color: "gray", width: "fit-content" }} underline="hover" >Home</Link>
-            <Link variant="body2" sx={{ color: "gray", width: "fit-content" }} href="/tools" underline="hover" >Tools</Link>
-            <Link variant="body2" sx={{ color: "gray", width: "fit-content" }} underline="hover" >About</Link>
+          <Box display="flex" flexDirection="column">
+            {quickLinks.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                variant="body2"
+                sx={{ color: 'gray', width: 'fit-content' }}
+                underline="hover"
+              >
+                {label}
+              </Link>
+            ))}
           </Box>
         </Grid>
-
 
         <Grid item xs={6} sm={4} md={2}>
           <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
             Legal
           </Typography>
           <Box display="flex" flexDirection="column">
-            <Link href="/privacy" variant="body2" sx={{ color: "gray", width: "fit-content" }} underline="hover" >Privacy Policy</Link>
-            <Link href="/terms" variant="body2" sx={{ color: "gray", width: "fit-content" }} underline="hover" >Terms of Service</Link>
+            {legalLinks.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                variant="body2"
+                sx={{ color: 'gray', width: 'fit-content' }}
+                underline="hover"
+              >
+                {label}
+              </Link>
+            ))}
           </Box>
         </Grid>
-
 
         <Grid item xs={12} sm={4} md={3}>
           <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
             Connect
           </Typography>
           <Box display="flex" gap={1}>
-            <IconButton color="inherit" href="https://twitter.com" target="_blank">
-              <TwitterIcon />
-            </IconButton>
-            <IconButton color="inherit" href="https://linkedin.com" target="_blank">
-              <LinkedInIcon />
-            </IconButton>
-            <IconButton color="inherit" href="https://github.com" target="_blank">
-              <GitHubIcon />
-            </IconButton>
+            {socialLinks.map(({ icon, href }, index) => (
+              <IconButton key={index} color="inherit" href={href} target="_blank">
+                {icon}
+              </IconButton>
+            ))}
           </Box>
         </Grid>
       </Grid>
-
 
       <Box mt={6} borderTop="1px solid #1e253b" pt={3} textAlign="center">
         <Typography variant="body2" color="gray">
