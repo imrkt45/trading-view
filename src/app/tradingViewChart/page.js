@@ -20,7 +20,7 @@ const defaultWidgetProps= {
 
 const TVChartContainer = dynamic(
   () =>
-    import("../Chart/TVChartContainer/index.jsx").then((mod) => mod.TVChartContainer),
+    import("../Chart/TVChartContainer/index").then((mod) => mod.TVChartContainer),
   { ssr: false }
 );
 

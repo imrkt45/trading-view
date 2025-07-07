@@ -29,7 +29,7 @@ export default function SignInPage() {
 
   const onSubmit = (data) => {
     console.log('Form Data:', data);
-    // TODO: Integrate authentication API
+    
   };
 
   const inputStyles = {
